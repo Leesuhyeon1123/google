@@ -123,21 +123,21 @@ nav > a:hover {
   outline: none;
 }
 .search_icon {
-    width: 10%;
-    min-width: 48px;
-    display: flex;
-    gap: 5px;
+  width: 10%;
+  min-width: 48px;
+  display: flex;
+  gap: 5px;
 }
-.search_icon a{
-    width: calc(100% / 2);
+.search_icon a {
+  width: calc(100% / 2);
 }
-.search_icon a img{
-    width: 100%;
+.search_icon a img {
+  width: 100%;
 }
 /* 반응형 */
 /* 모바일일때 서치바 크기 맞추기 : 반응형 */
-@media screen and (max-width:390px) {
-    .search_bar {
-        padding: 5px 15px;
-    }
+@media screen and (max-width: 390px) {
+  .search_bar {
+    padding: 5px 15px;
+  }
 }
