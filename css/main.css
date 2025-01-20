@@ -1,0 +1,143 @@
+@charset "utf-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+nav {
+  /* 이너위드 아니면 왠만하면 px지정 하지말기 */
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: beige;
+}
+/* 꺽새는 자식한테만됨 손자는 x */
+/* 'gmail, 이미지' hover했을때 밑줄효과 적용 */
+nav > a:hover {
+  text-decoration: underline;
+}
+/* 부모를 따라가기때문에 따로 플렉스 줘야 가로정렬 같이됨 */
+.navIcon {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+/* 점3개 svg 나오게하기 , 밝기 조절(투명도만 가능), 색상 변경은 피그마 */
+#menu {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+/* 'svg 아이콘 호버 원효과 적용 */
+#menu::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -6px;
+  left: -7px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.3s; /*부드럽게 만들어주기*/
+  background-color: rgba(0, 0, 0, 0.2);
+}
+#menu:hover::after {
+  opacity: 1;
+}
+/* 'svg 아이콘' 호버 글자 효과 적용 */
+#menu::before {
+  content: attr(aria-label); /*aria-label의 값을 사용*/
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 5px;
+  padding: 7px;
+  font-size: 12px;
+  opacity: 0;
+  white-space: nowrap; /*텍스트 줄바꿈 방지*/
+  transition: all 0.3s; /*부드럽게 만들어주기*/
+}
+#menu:hover::before {
+  opacity: 1;
+}
+
+#menu svg {
+  position: relative;
+  width: 100%;
+  opacity: 0.5;
+}
+
+/* 로그인 버튼 꾸미기*/
+#login {
+  width: 70px;
+  height: 30px;
+  color: white;
+  background-color: #4484f3;
+  border: 0;
+  border-radius: 3px;
+}
+/* 구글 로고 */
+.main-wrap {
+  margin-top: 200px;
+  text-align: center;
+}
+
+/* search 검색바 */
+.search_bar {
+  width: 70%;
+  max-width: 560px;
+  min-width: 310px;
+  margin: 30px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 25px;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 100px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+/* 구글 검색 url 입력  */
+.search_bar input {
+  width: 60%;
+  border: none;
+  padding: 5px;
+  outline: none;
+}
+.search_icon {
+    width: 10%;
+    min-width: 48px;
+    display: flex;
+    gap: 5px;
+}
+.search_icon a{
+    width: calc(100% / 2);
+}
+.search_icon a img{
+    width: 100%;
+}
+/* 반응형 */
+/* 모바일일때 서치바 크기 맞추기 : 반응형 */
+@media screen and (max-width:390px) {
+    .search_bar {
+        padding: 5px 15px;
+    }
+}
