@@ -12,6 +12,9 @@ a {
   text-decoration: none;
   color: #333;
 }
+body {
+  height: 2000px;
+}
 nav {
   /* 이너위드 아니면 왠만하면 px지정 하지말기 */
   width: 100%;
@@ -24,6 +27,10 @@ nav {
   gap: 20px;
   padding: 20px;
   background-color: beige;
+  z-index: 99;
+}
+nav.scrolled {
+  background-color: rgb(245, 142, 8);
 }
 /* 꺽새는 자식한테만됨 손자는 x */
 /* 'gmail, 이미지' hover했을때 밑줄효과 적용 */
